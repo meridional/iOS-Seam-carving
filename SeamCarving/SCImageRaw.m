@@ -101,17 +101,26 @@ typedef struct {
         *this = abs([self grayAtRow:i+1 column:j] - [self grayAtRow:(i-1) column:j])
         + abs([self grayAtRow:i column:j-1] - [self grayAtRow:i column:j]) * 0.5;
     }
+    
+    // corner cases
+    
     i = 0; j = 0;
     double *this = self.gradient + i * self.width + j;
     *this = abs([self grayAtRow:i+1 column:j] - [self grayAtRow:(i) column:j]) * 0.5
         + abs([self grayAtRow:i column:j+1] - [self grayAtRow:i column:j]) * 0.5;
+    
     i = 0; j = self.width - 1;
+    this = self.gradient + i * self.width + j;
     *this = abs([self grayAtRow:i+1 column:j] - [self grayAtRow:(i) column:j]) * 0.5
         + abs([self grayAtRow:i column:j-1] - [self grayAtRow:i column:j]) * 0.5;
+    
     i = self.height - 1; j = 0;
+    this = self.gradient + i * self.width + j;
     *this = abs([self grayAtRow:i-1 column:j] - [self grayAtRow:(i) column:j]) * 0.5
         + abs([self grayAtRow:i column:j+1] - [self grayAtRow:i column:j]) * 0.5;
+    
     i = self.height - 1; j = self.width - 1;
+    this = self.gradient + i * self.width + j;
     *this = abs([self grayAtRow:i-1 column:j] - [self grayAtRow:(i) column:j]) * 0.5
         + abs([self grayAtRow:i column:j-1] - [self grayAtRow:i column:j]) * 0.5;
 }
@@ -233,7 +242,10 @@ typedef struct {
     CFDataRef rawData = CFDataCreate(NULL, rawBytes, (self.width - 1) * 4 * (self.height));
     CGDataProviderRef provider = CGDataProviderCreateWithCFData(rawData);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGImageRef imageRef = CGImageCreate(self.width - 1, self.height, 8, 32, (self.width - 1) * 4, colorSpace, 5, provider, NULL, NO, kCGRenderingIntentDefault);
+    CGImageRef imageRef = CGImageCreate(self.width - 1, self.height,
+                                        8, 32, (self.width - 1) * 4, colorSpace, 5,
+                                        provider, NULL, NO,
+                                        kCGRenderingIntentDefault);
     CGColorSpaceRelease(colorSpace);
     UIImage *carvedImage = [UIImage imageWithCGImage:imageRef];
     CGImageRelease(imageRef);

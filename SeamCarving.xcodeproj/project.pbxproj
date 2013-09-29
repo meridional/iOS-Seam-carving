@@ -38,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		4A31001851B2408690CDB745 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8817A25EF8F14E8888401064 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		988E790917F7A72600424192 /* SeamCarving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeamCarving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988E790C17F7A72600424192 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		988E790E17F7A72600424192 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,7 +94,6 @@
 				988E793117F7A72600424192 /* SeamCarvingTests */,
 				988E790B17F7A72600424192 /* Frameworks */,
 				988E790A17F7A72600424192 /* Products */,
-				8817A25EF8F14E8888401064 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -394,7 +392,6 @@
 		};
 		988E793C17F7A72600424192 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8817A25EF8F14E8888401064 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -435,7 +432,6 @@
 		};
 		988E793D17F7A72600424192 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8817A25EF8F14E8888401064 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
