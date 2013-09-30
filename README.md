@@ -1,7 +1,7 @@
 iOS-Seam-carving
 ================
 
-Seam carving
+needs optimization
 
 implementation of seam carving method for content-aware image resizing
 
